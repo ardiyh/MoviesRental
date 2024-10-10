@@ -1,4 +1,4 @@
-Tes user dengan environment `PostgreSQL 16` dengan dataset yang telah disediakan: `backup-dvdrental-202410100947.sql`.
+Environment `PostgreSQL 16`, `php 8.3`, dan `laravel 11` dengan dataset yang telah disediakan: `backup-dvdrental-202410100947.sql`.
 
 ## Instruksi:
 1. **Tampilkan List Tabel Film Berdasarkan Jumlah Sewa Terbanyak:**
