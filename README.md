@@ -57,7 +57,7 @@ FROM film f JOIN inventory i ON f.film_id = i.film_id JOIN rental r ON i.invento
 WHERE r.return_date IS NOT NULL
 ```
 
-**Memfilter hasil untuk memastikan hanya menghitung sewa dvd yang sudah dikembalikan saja**: Filter ini memastikan hanya penyewaan yang sudah dikembalikan yang dihitung durasi sewanya, karena penyewaan yang belum dikembalikan tidak memiliki tanggal pengembalian `(return_date)`.
+**Memfilter hasil untuk memastikan hanya menghitung sewa dvd yang sudah kembali**: Filter ini memastikan hanya penyewaan yang sudah dikembalikan yang dihitung durasi sewanya, karena penyewaan yang belum dikembalikan tidak memiliki tanggal pengembalian `(return_date)`.
 
 ```sql
 GROUP BY f.film_id, f.title
