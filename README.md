@@ -47,28 +47,28 @@ file: `dvdrental-average-rent.sql`
 SELECT f.film_id, f.title, ROUND(AVG(DATE_PART('day', r.return_date - r.rental_date))) AS average_rental_duration_days
 ```
 
-**Memilih ID film, judul film, dan menghitung rata-rata**: Menggunakan DATE_PART untuk mendapatkan hari saja dari interval durasi sewa, lalu menghitung rata-rata dan membulatkannya.
+**Memilih ID film, judul film, dan menghitung rata-rata lama penyewaan (dalam hari)**: Menggunakan DATE_PART untuk mendapatkan hari saja dari interval durasi sewa, lalu menghitung rata-rata dan membulatkannya.
 
 ```sql
 FROM film f JOIN inventory i ON f.film_id = i.film_id JOIN rental r ON i.inventory_id = r.inventory_id
 ```
 
-Menggabungkan tabel film, inventory, dan rental untuk mendapatkan data penyewaan.
+**Menggabungkan tabel film, inventory, dan rental untuk mendapatkan data penyewaan:**: Sama seperti query pertama, tabel film dihubungkan dengan tabel inventory berdasarkan kolom `film_id`, dan tabel `inventory` dihubungkan dengan tabel `rental` berdasarkan kolom `inventory_id` untuk mendapatkan data penyewaan.
 
 ```sql
 WHERE r.return_date IS NOT NULL
 ```
 
-Memfilter hasil untuk memastikan hanya menghitung sewa dvd yang sudah dikembalikan saja.
+**Memfilter hasil untuk memastikan hanya menghitung sewa dvd yang sudah dikembalikan saja**: Filter ini memastikan hanya penyewaan yang sudah dikembalikan yang dihitung durasi sewanya, karena penyewaan yang belum dikembalikan tidak memiliki tanggal pengembalian `(return_date)`.
 
 ```sql
 GROUP BY f.film_id, f.title
 ```
 
-Mengelompokkan hasil berdasarkan ID film dan judul film
+**Mengelompokkan hasil berdasarkan ID film dan judul film**: Query ini mengelompokkan data berdasarkan film_id dan title agar setiap film hanya muncul sekali dengan rata-rata durasi sewa yang sesuai.
 
 ```sql
 ORDER BY average_rental_duration_days DESC
 ```
 
-Mengurutkan hasil berdasarkan rata-rata durasi sewa dalam urutan menurun
+**Mengurutkan hasil berdasarkan rata-rata durasi sewa dalam urutan menurun**: Hasil query diurutkan dari film dengan rata-rata lama penyewaan tertinggi hingga terendah.
