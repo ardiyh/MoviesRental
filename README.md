@@ -7,6 +7,8 @@ Environment `PostgreSQL 16`, `php 8.3`, dan `laravel 11` dengan dataset yang tel
 2. **Hitung Rata-Rata Lama Penyewaan Film:**
    Buatlah query yang menghitung rata-rata lama penyewaan setiap film dalam satuan hari.
 
+3. **Buat model verifikasi cascade pada database tersebut serta migrasi menggunakan Laravel**
+
 ## Penjelasasan Jawaban 1 - Daftar Film Berdasarkan Jumlah Penyewaan Terbanyak
 
 file: `dvdrental-frequent-rent.sql`
