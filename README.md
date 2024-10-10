@@ -1,8 +1,6 @@
-# User Test Instructions: PostgreSQL 16 Environment
+Tes user dengan environment `PostgreSQL 16` dengan dataset yang telah disediakan: `backup-dvdrental-202410100947.sql`.
 
-Instruksi berikut ini menggunakan PostgreSQL 16 dengan dataset yang telah disediakan: `backup-dvdrental-202410100947.sql`.
-
-## Tujuan:
+## Instruksi:
 1. **Tampilkan List Tabel Film Berdasarkan Jumlah Sewa Terbanyak:**
    Buatlah query untuk menampilkan daftar film yang diurutkan berdasarkan jumlah penyewaan terbanyak.
 
